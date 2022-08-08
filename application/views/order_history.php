@@ -20,8 +20,9 @@
                             <th>Số lượng</th>
                             <th>Thành tiền</th>
                             <th>Ghi chú</th>
-                            <th>Trạng thái</th>
                             <th>Ngày đặt</th>
+                            <th>Trạng thái</th>
+                            <th>Chi tiết</th>
                             <th>Đánh giá</th>
                         </tr>
                     </thead>
@@ -33,6 +34,7 @@
                                 <td><?= $value['amount'] ?></td>
                                 <td><?= number_format($value['bill_price'], 0, ',', ',').' VNĐ'?></td>
                                 <td><?= $value['note'] ?></td>
+                                <td><?= ($value['created_at'] == 0) ? "x" : date('H:i:s d/m/Y', $value["created_at"]) ?></td>
                                 <td><?php if ($value['status'] == 0) {
                                         echo 'Chưa duyệt';
                                     } else if($value['status'] == 1) {
@@ -40,8 +42,8 @@
                                     }else if($value['status'] == 2) {
                                         echo "Đã Huỷ";
                                     } ?></td>
-                                <td><?= ($value['created_at'] == 0) ? "x" : date('H:i:s d/m/Y', $value["created_at"]) ?></td>
-                                <td>Chua lam</td>
+                                <td><a href="lich-su-don-hang?id=<?= $value['id'] ?>" class="btn btn-primary">Chi tiết</a></td>
+                                <td><button class="btn btn-primary dgsp">Đánh giá</button></td>
                             </tr>
                         <? } ?>
                     </tbody>

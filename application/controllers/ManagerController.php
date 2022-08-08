@@ -102,9 +102,19 @@ class ManagerController extends CI_Controller
 		$this->data['content'] = '/order_history.php';
 		$this->load->view('manager_view', $this->data);
 	}
+	public function historyDetails(){
+		// $id = $this->session->userdata('user')['id'];
+		$id = $this->input->get('id');
+		$history = $this->Bill_details->historyDetails($id);
+		$this->data['title'] = 'Chi tiết hoá đơn';
+		$this->data['css'] = ['cont_order.css?v=' . version()];
+		$this->data['js'] = ['jquery.validate.min.js', 'cont_order.js?v=' . version()];
+		$this->data['history'] = $history;
+		$this->data['content'] = '/order_history.php';
+		$this->load->view('manager_view', $this->data);
+	}
 	public function mailSend()
 	{
-
 		if (!empty($_GET['email'])) {
 			if ($_GET['email'] == md5($_SESSION['email'])) {
 				$email = $_SESSION['email'];

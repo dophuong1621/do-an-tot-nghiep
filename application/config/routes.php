@@ -67,6 +67,7 @@ $route['gio-hang.html'] = 'ManagerController/cart';
 $route['gio-hang.html?payment=(:num)'] = 'ManagerController/cart'; 
 $route['thong-tin-thanh-toan.html'] = 'ManagerController/billInfor'; 
 $route['lich-su-don-hang.html'] = 'ManagerController/orderHistory'; 
+$route['lich-su-don-hang?id=(:num).html'] = 'ManagerController/historyDetails'; 
 $route['trang-ca-nhan-tk(:num).html'] = 'ManagerController/personalPage/$1'; 
 
 $route['admin'] = 'Admin/Views/Admin/index';
