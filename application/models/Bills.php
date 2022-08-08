@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Bills extends CI_Model
 {
 	protected $_table = 'bills';
+	protected $_table2 = 'bill_details';
 	function __construct()
 	{
 		parent::__construct();
@@ -13,6 +14,7 @@ class Bills extends CI_Model
 	{
 		$this->db->select('bills.id,bills.bill_name,bills.user_id, bills.phone,bills.address, bills.card_name, bills.note,bills.total_trans,bills.voucher,total_voucher, total_price,bills.status,bills.created_at');
 		$this->db->join('users', 'users.id=bills.user_id');
+		$this->db->order_by('bills.id', 'DESC');
 		// $this->db->join('voucher', 'voucher.id=bills.voucher');
 		$this->db->where('bills.status', 0);
 		return $this->db->get($this->_table)->result_array();
@@ -22,6 +24,13 @@ class Bills extends CI_Model
 		$this->db->select('bills.id,bills.bill_name,bills.user_id, bills.phone,bills.address, bills.card_name, bills.note,bills.total_trans,bills.voucher,total_voucher, total_price,bills.status,bills.created_at');
 		$this->db->join('users', 'users.id=bills.user_id');
 		$this->db->where('bills.status', 1);
+		return $this->db->get($this->_table)->result_array();
+	}
+	public function canceled()
+	{
+		$this->db->select('bills.id,bills.bill_name,bills.user_id, bills.phone,bills.address, bills.card_name, bills.note,bills.total_trans,bills.voucher,total_voucher, total_price,bills.status,bills.created_at');
+		$this->db->join('users', 'users.id=bills.user_id');
+		$this->db->where('bills.status', 2);
 		return $this->db->get($this->_table)->result_array();
 	}
 	public function details($id)
@@ -44,5 +53,12 @@ class Bills extends CI_Model
 	{
 		$this->db->where('id', $id);
 		return $this->db->update($this->_table, $data);
+	}
+	public function history($id)
+	{
+		$this->db->where('user_id', $id);
+		$this->db->join('bills', 'bill_details.bill_id=bills.id', 'left');
+		$this->db->join('product', 'bill_details.product_id=product.id', 'right');
+		return $this->db->get($this->_table2)->result_array();
 	}
 }

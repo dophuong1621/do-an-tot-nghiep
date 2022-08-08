@@ -24,11 +24,11 @@
                     <img src="/assets/images/tcb.png" alt="TECHCOMBANK" class="img_bank">
                 </div>
                 <p class="bank_text">THÔNG TIN TÀI KHOẢN <span class="name_bank">TECHCOMBANK</span></p>
-                <p class="bank_t1"><span class="text_bold">Số tài khoản: </span><span class="text_x stk">19030989969886</span></p>
-                <p class="bank_t1"><span class="text_bold">Chủ tài khoản: </span><span class="text_x ctk">TRƯƠNG VĂN TRẮC</span></p>
+                <p class="bank_t1"><span class="text_bold">Số tài khoản: </span><span class="text_x stk">19031234568</span></p>
+                <p class="bank_t1"><span class="text_bold">Chủ tài khoản: </span><span class="text_x ctk">ĐỖ PHƯƠNG</span></p>
                 <p class="bank_t1"><span class="text_bold">Chi nhánh: </span><span class="text_x cn">Nam Hà Nội</span></p>
                 <p class="bank_t1"><span class="text_bold">Nội dung chuyển khoản: </span><span class="text_x">[ Tài khoản email ] Mua the thong minh SmartID365</span></p>
-                <p><span class="text_bold">Ví dụ: </span><span class="text_x">thuytrang@gmail.com mua the thong minh SmartID365</span></p>
+                <p><span class="text_bold">Ví dụ: </span><span class="text_x">dophuong@gmail.com mua the thong minh SmartID365</span></p>
             </div>
             <div class="bank_r">
                 <button type="button" class="btn_t agri"><img src="/assets/images/agri.png" alt="Agribank" class="icon_bank"></button>

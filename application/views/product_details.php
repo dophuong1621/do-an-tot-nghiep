@@ -41,7 +41,7 @@
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active dt_descrip" id="pills-descrip" role="tabpanel" aria-labelledby="pills-descrip-tab"><?= $infoProduct['description'] ?></div>
             <div class="tab-pane fade dt_evaluate" id="pills-evaluate" role="tabpanel" aria-labelledby="pills-evaluate-tab">
-                <form method="POST" role="form" enctype="multipart/form-data" id="form_evaluate">
+                <!-- <form method="POST" role="form" enctype="multipart/form-data" id="form_evaluate">
                     <div class="evaluate_k1">
                         <div class="eva_k1_l">
                             <div class="mb_20">
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                </form> -->
                 <?php if (!empty($eva)) { ?>
                     <div class="evaluate_k2">
                         <div class="dg_k2_l">

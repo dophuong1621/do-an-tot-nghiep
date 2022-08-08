@@ -78,4 +78,4 @@
 <div id="btn-top" style="display: none;"></div>
 <!-- <a rel="nofollow" href="https://zalo.me/0982079209" id="sky_icon" ><img alt="Liên hệ qua zalo" src="/assets/images/zalo.png" width="47" height="47" /></a>
 <a rel="nofollow" href="tel:0982079209" id="call_icon" ><img alt="Liên hệ qua skype" src="/images/call_icon.png" width="47" height="47" /></a> -->
- -->
+ 

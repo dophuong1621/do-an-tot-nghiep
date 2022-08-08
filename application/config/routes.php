@@ -66,6 +66,7 @@ $route['(:any)-c(:num).html'] = 'ManagerController/productDetails/$1/$2';
 $route['gio-hang.html'] = 'ManagerController/cart'; 
 $route['gio-hang.html?payment=(:num)'] = 'ManagerController/cart'; 
 $route['thong-tin-thanh-toan.html'] = 'ManagerController/billInfor'; 
+$route['lich-su-don-hang.html'] = 'ManagerController/orderHistory'; 
 $route['trang-ca-nhan-tk(:num).html'] = 'ManagerController/personalPage/$1'; 
 
 $route['admin'] = 'Admin/Views/Admin/index';
@@ -92,10 +93,13 @@ $route['admin/add_voucher'] = 'Admin/Views/Admin/add_voucher';
 $route['admin/edit_voucher'] = 'Admin/Views/Admin/edit_voucher';
 $route['admin/edit_voucher?id=(:num)'] = 'Admin/Views/Admin/edit_voucher/$1';
 // hoá đơn
+$route['admin/add_bill'] = 'Admin/Views/Admin/add_bill';
 $route['admin/unapproved_invoice'] = 'Admin/Views/Admin/unapproved_invoice';
 $route['admin/approved_invoice'] = 'Admin/Views/Admin/approved_invoice';
 $route['admin/unapproved_details'] = 'Admin/Views/Admin/unapproved_details';
 $route['admin/unapproved_details?id=(:num)'] = 'Admin/Views/Admin/unapproved_details/$1';
+$route['admin/canceled_invoice'] = 'Admin/Views/Admin/canceled_invoice';
+$route['admin/canceled_invoice?id=(:num)'] = 'Admin/Views/Admin/canceled_invoice/$1';
 $route['admin/approved_details'] = 'Admin/Views/Admin/approved_details';
 $route['admin/approved_details?id=(:num)'] = 'Admin/Views/Admin/approved_details/$1';
 

@@ -82,8 +82,8 @@ Thẻ đã sẵn sàng rồi, sử dụng thôi!</p>
         </div>
     </div>
 </div>
-<h2 class="bn_t1 video_t text-center">Video hướng dẫn sử dụng thẻ thông minh <span class="bn_t1 color_x">SMARTID365</span></h2>
+<!-- <h2 class="bn_t1 video_t text-center">Video hướng dẫn sử dụng thẻ thông minh <span class="bn_t1 color_x">SMARTID365</span></h2>
 <div class="video_hd text-center">
     <iframe class="pm_video" src="https://www.youtube.com/embed/UssNzo6m1p8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+</div> -->
 

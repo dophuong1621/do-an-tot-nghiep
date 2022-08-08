@@ -44,7 +44,7 @@ $user_name = $infoAdmin['user_name'];
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -91,8 +91,10 @@ $user_name = $infoAdmin['user_name'];
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#collapseTwo">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản lý hoá đơn</h6>
+                        <a class="collapse-item" href="/admin/add_bill">Thêm hoá đơn</a>
                         <a class="collapse-item" href="/admin/unapproved_invoice">Hoá đơn chưa duyệt</a>
                         <a class="collapse-item" href="/admin/approved_invoice">Hoá đơn đã duyệt</a>
+                        <a class="collapse-item" href="/admin/canceled_invoice">Hoá đơn đã huỷ</a>
                     </div>
                 </div>
             </li>

@@ -49,7 +49,7 @@ if ($this->session->has_userdata('user')) {
 			<a href="/" class="mr-auto d-flex"><img src="/assets/images/smart.png" alt="smartID 365" class="logo_site" style="width: 100px; heigth: 100px"></a>
 			<a class="hd_r hd_home" href="/">Trang chủ</a>
 			<a class="hd_r hd_sp" href="/san-pham.html">Sản phẩm</a>
-			<a class="hd_r" href="https://timviec365.vn/blog/c240/kpi-nang-luc">Tin tức</a>
+			<!-- <a class="hd_r" href="https://timviec365.vn/blog/c240/kpi-nang-luc">Tin tức</a> -->
 			<a class="hd_r hd_hd" href="/huong-dan.html">Hướng dẫn</a>
 			<div class="hd_cart d-flex">
 				<img src="/assets/images/cart.svg" alt="giỏ hàng" class="icon_cart">
@@ -69,6 +69,7 @@ if ($this->session->has_userdata('user')) {
 					<img src="/assets/avata_user/<?= ($prof->avatar != null) ? '' . $prof->avatar . '' : "user.png" ?>" alt="Ảnh người dùng" class="dropdown-toggle img_user" data-toggle="dropdown">
 					<div class="dropdown-menu">
 						<a class="dropdown-item item_tcn" href="/trang-ca-nhan-tk<?= $id ?>.html">Trở lại trang cá nhân</a>
+						<a class="dropdown-item item_tcn" href="/lich-su-don-hang.html">Lịch sử đơn hàng</a>
 						<a class="dropdown-item item_logout color_d" href="/ManagerController/logout">Đăng xuất</a>
 					</div>
 				</div>

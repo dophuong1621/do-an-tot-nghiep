@@ -18,6 +18,8 @@ class ManagerController extends CI_Controller
 		$this->load->model("City");
 		$this->load->model("District");
 		$this->load->model("Evaluates");
+		$this->load->model("Bills");
+		$this->load->model("Bill_details");
 		date_default_timezone_set('Asia/Ho_Chi_Minh');
 	}
 	public function checkLogin()
@@ -90,7 +92,16 @@ class ManagerController extends CI_Controller
 		$this->data['content'] = '/forgot_password.php';
 		$this->load->view('manager_view', $this->data);
 	}
-
+	public function orderHistory(){
+		$id = $this->session->userdata('user')['id'];
+		$history = $this->Bill_details->history($id);
+		$this->data['title'] = 'Lịch sử đơn hàng';
+		$this->data['css'] = ['cont_order.css?v=' . version()];
+		$this->data['js'] = ['jquery.validate.min.js', 'cont_order.js?v=' . version()];
+		$this->data['history'] = $history;
+		$this->data['content'] = '/order_history.php';
+		$this->load->view('manager_view', $this->data);
+	}
 	public function mailSend()
 	{
 
@@ -198,4 +209,5 @@ class ManagerController extends CI_Controller
 		$this->data['email'] = $email;
 		$this->load->view('manager_view', $this->data);
 	}
+	
 }

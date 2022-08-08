@@ -172,21 +172,6 @@ class Admin extends CI_Controller
 		$this->data['unapproved_invoice'] = $this->Bills->unapproved();
 		$this->load->view('admin/index', $this->data);
 	}
-	public function approved_invoice()
-	{
-		$this->checkLogin();
-		$this->data['title'] = 'Hoá đơn đã duyệt';
-		$this->data['css'] = ['/assets/admin/vendor/datatables/dataTables.bootstrap4.min.css', '/assets/admin/css/product.css'];
-		$this->data['js'] = [
-			'/assets/admin/vendor/datatables/jquery.dataTables.min.js',
-			'/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js',
-			'/assets/admin/js/demo/datatables-demo.js',
-			'/assets/admin/js/admin/jquery.tableToExcel.js'
-		];
-		$this->data['content'] = '/admin/approved_invoice.php';
-		$this->data['approved_invoice'] = $this->Bills->approved();
-		$this->load->view('admin/index', $this->data);
-	}
 	public function unapproved_details()
 	{
 		$this->checkLogin();
@@ -203,6 +188,21 @@ class Admin extends CI_Controller
 		$this->data['details'] = $this->Bills->details($id);
 		$this->load->view('admin/index', $this->data);
 	}
+	public function approved_invoice()
+	{
+		$this->checkLogin();
+		$this->data['title'] = 'Hoá đơn đã duyệt';
+		$this->data['css'] = ['/assets/admin/vendor/datatables/dataTables.bootstrap4.min.css', '/assets/admin/css/product.css'];
+		$this->data['js'] = [
+			'/assets/admin/vendor/datatables/jquery.dataTables.min.js',
+			'/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js',
+			'/assets/admin/js/demo/datatables-demo.js',
+			'/assets/admin/js/admin/jquery.tableToExcel.js'
+		];
+		$this->data['content'] = '/admin/approved_invoice.php';
+		$this->data['approved_invoice'] = $this->Bills->approved();
+		$this->load->view('admin/index', $this->data);
+	}
 	public function approved_details()
 	{
 		$this->checkLogin();
@@ -217,6 +217,37 @@ class Admin extends CI_Controller
 		$this->data['content'] = '/admin/approved_details.php';
 		$id = $this->input->get('id');
 		$this->data['details'] = $this->Bills->details($id);
+		$this->load->view('admin/index', $this->data);
+	}
+	public function canceled_invoice()
+	{
+		$this->checkLogin();
+		$this->data['title'] = 'Hoá đơn đã huỷ';
+		$this->data['css'] = ['/assets/admin/vendor/datatables/dataTables.bootstrap4.min.css', '/assets/admin/css/product.css'];
+		$this->data['js'] = [
+			'/assets/admin/vendor/datatables/jquery.dataTables.min.js',
+			'/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js',
+			'/assets/admin/js/demo/datatables-demo.js',
+			'/assets/admin/js/admin/jquery.tableToExcel.js',
+		];
+		$this->data['content'] = '/admin/canceled_invoice.php';
+		$this->data['canceled_invoice'] = $this->Bills->canceled();
+		$this->load->view('admin/index', $this->data);
+	}
+	public function canceled_details()
+	{
+		$this->checkLogin();
+		$this->data['title'] = 'Chi tiết hoá đơn đã huỷ';
+		$this->data['css'] = ['/assets/admin/vendor/datatables/dataTables.bootstrap4.min.css', '/assets/admin/css/product.css'];
+		$this->data['js'] = [
+			'/assets/admin/vendor/datatables/jquery.dataTables.min.js',
+			'/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js',
+			'/assets/admin/js/demo/datatables-demo.js',
+			'/assets/admin/js/admin/jquery.tableToExcel.js'
+		];
+		$this->data['content'] = '/admin/canceled_details.php';
+		$id = $this->input->get('id');
+		// $this->data['details'] = $this->Bills->details($id);
 		$this->load->view('admin/index', $this->data);
 	}
 	public function users()
@@ -274,6 +305,21 @@ class Admin extends CI_Controller
 			'/assets/admin/js/demo/datatables-demo.js'
 		];
 		$this->data['content'] = '/admin/evaluate_details.php';
+		$id = $this->input->get('id');
+		$this->data['details'] = $this->Evaluates->details($id);
+		$this->load->view('admin/index', $this->data);
+	}
+	public function add_bill()
+	{
+		$this->checkLogin();
+		$this->data['title'] = 'Thêm hoá đơn';
+		$this->data['css'] = ['/assets/admin/vendor/datatables/dataTables.bootstrap4.min.css', '/assets/admin/css/product.css'];
+		$this->data['js'] = [
+			'/assets/admin/vendor/datatables/jquery.dataTables.min.js',
+			'/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js',
+			'/assets/admin/js/demo/datatables-demo.js'
+		];
+		$this->data['content'] = '/admin/add_bill.php';
 		$id = $this->input->get('id');
 		$this->data['details'] = $this->Evaluates->details($id);
 		$this->load->view('admin/index', $this->data);

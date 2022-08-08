@@ -1259,7 +1259,7 @@ function uploadImg(uploadimg, select, img) {
 }
 $(document).on("click", ".bankPopup", function () {
     $('#modal_info_bank').modal('show');
-    idCont = $(this).find('.contact').attr('data-id');
+    idCont = $(this).find('.contact').attr('data-link-id');
     // đổ dữ liệu thông tin liên hệ
     $.ajax({
         type: 'POST',
@@ -1305,6 +1305,7 @@ $(document).on("click", ".bankPopup2", function () {
                 htmlPop += '</div>';
                 $('#modal_info_bank .modal-body').html(htmlPop);
             });
+
         }
     });
 });

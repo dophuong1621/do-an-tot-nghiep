@@ -595,6 +595,8 @@ class PersonalPageController extends CI_Controller
     {
         $id = $this->input->post('id');
         $cont = $this->Contact->selectCont($id);
+        // var_dump($this->Contact->selectCont($id));
+
         echo json_encode($cont);
     }
     public function index_contact2()

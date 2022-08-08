@@ -1,62 +1,62 @@
 $(document).ready(function(){
     const bank = [{
         "tk" : "BIDV",
-        "stk": "21610000775434",
-        "ctk": "TRƯƠNG VĂN TRẮC",
+        "stk": "123548715648731",
+        "ctk": "ĐỖ PHƯƠNG",
         "cn": "Hoàng Mai, Hà Nội",
         "img": "/assets/images/bidv.png"
     }, {
         "tk" : "VIETCOMBANK",
-        "stk": "1023780714",
-        "ctk": "TRƯƠNG VĂN TRẮC",
+        "stk": "12054456712",
+        "ctk": "ĐỖ PHƯƠNG",
         "cn": "PGD Định Công - Chi nhánh Hoàn Kiếm",
         "img": "/assets/images/vcb.png"
     }, {
         "tk" : "MB-BANK",
-        "stk": "0680114396002",
-        "ctk": "TRƯƠNG VĂN TRẮC",
+        "stk": "1234531575132",
+        "ctk": "ĐỖ PHƯƠNG",
         "cn": "Hà Nội",
         "img": "/assets/images/mb.png"
     }, {
         "tk" : "ACB",
         "stk": "21804257",
-        "ctk": "TRƯƠNG VĂN TRẮC",
+        "ctk": "ĐỖ PHƯƠNG",
         "cn": "Hà Nội",
         "img": "/assets/images/acb.png"
     }, {
         "tk" : "SACOMBANK",
         "stk": "020085965000",
-        "ctk": "DƯ THỊ NHẠN",
+        "ctk": "ĐỖ PHƯƠNG",
         "cn": "Chi nhánh Hoàng Mai",
         "img": "/assets/images/sacom.png"
     }, {
         "tk" : "VIB",
         "stk": "007704060070735",
-        "ctk": "TRƯƠNG VĂN TRẮC",
+        "ctk": "ĐỖ PHƯƠNG",
         "cn": "PGD THANH XUÂN - Hà Nội",
         "img": "/assets/images/vib.png"
     }, {
         "tk" : "VIETINBANK",
         "stk": "100874190609",
-        "ctk": "TRƯƠNG VĂN TRẮC",
+        "ctk": "ĐỖ PHƯƠNG",
         "cn": "Thanh Xuân, Hà Nội",
         "img": "/assets/images/vtb.png"
     }, {
         "tk" : "TECHCOMBANK",
         "stk": "19030989969886",
-        "ctk": "TRƯƠNG VĂN TRẮC",
+        "ctk": "ĐỖ PHƯƠNG",
         "cn": "Nam Hà Nội",
         "img": "/assets/images/tcb.png"
     }, {
         "tk" : "MSB",
         "stk": "03501013949867",
-        "ctk": "TRƯƠNG VĂN TRẮC",
+        "ctk": "ĐỖ PHƯƠNG",
         "cn": "Nam Hà Nội",
         "img": "/assets/images/msb.png"
     }, {
         "tk" : "AGRIBANK",
         "stk": "1300206462551",
-        "ctk": "TRƯƠNG VĂN TRẮC",
+        "ctk": "ĐỖ PHƯƠNG",
         "cn": "Thăng Long, Hà Nội",
         "img": "/assets/images/agri.png"
     } ];
