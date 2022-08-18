@@ -19,8 +19,13 @@
                             <input type="text" class="tg_value amount" value="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                             <span class="tg_cong btn_cong">+</span>
                         </button>
+                        <?php if($infoProduct['amount'] > 0){ ?>
                         <button type="button" class="btn_t btn_cart1" data-id="<?= $infoProduct['id'] ?>"><img src="/assets/images/cart1.svg" alt="Thêm vào giỏ hàng" class="icon_card1"></button>
-                        <a href="/gio-hang.html" class="btn_x dt_text5" id="buy_now">Mua ngay</a>
+                            <a href="/gio-hang.html" class="btn_x dt_text5" id="buy_now">Mua ngay</a>
+                        <?php }else{ ?>
+                            <a href="tel:0522901602" class="btn_x dt_text5 out_of_stock" id="out_of_stock">Sắp về hàng <br> (Vui lòng liên hệ trực tiếp)</a>
+                            <a href="/san-pham.html" class="btn_x dt_text5 product_watch">Xem sản phẩm khác</a>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

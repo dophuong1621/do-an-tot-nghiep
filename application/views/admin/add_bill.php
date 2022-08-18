@@ -38,6 +38,13 @@
             </div>
         </div>
         <div class="d-flex mb-3">
+            <label for="exampleInputEmail1" class="d-flex col-xl-3">Mã giảm giá<span class="text-danger ml-1">*</span></label> 
+            <div class="w-100 text-right">
+                <input type="text" class="form-control col-xl-12 mb-1" placeholder="Mã giảm giá" name="voucher" id="voucher">
+                <i class="text-danger voucher_error"></i>
+            </div>
+        </div>
+        <div class="d-flex mb-3">
             <label for="exampleInputEmail1" class="d-flex col-xl-3">Ghi chú<span class="text-danger ml-1">*</span></label> 
             <div class="w-100 text-right">
                 <input type="number" class="form-control col-xl-12 mb-1" placeholder="Ghi chú" name="note" id="note">

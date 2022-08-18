@@ -102,15 +102,15 @@
                 </div>
             </div>
             <div class="d-flex mb-3">
-                <label for="exampleInputEmail1" class="d-flex col-xl-3">Giá sản phẩm</label>
-                <div class="w-100 text-right">
-                    <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= number_format($key['bill_price'],0,',',','). ' VNĐ'  ?>">
-                </div>
-            </div>
-            <div class="d-flex mb-3">
                 <label for="exampleInputEmail1" class="d-flex col-xl-3">Số lượng đặt</label>
                 <div class="w-100 text-right">
                     <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $key['amount'] ?>">
+                </div>
+            </div>
+            <div class="d-flex mb-3">
+                <label for="exampleInputEmail1" class="d-flex col-xl-3">Giá sản phẩm</label>
+                <div class="w-100 text-right">
+                    <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= number_format($key['bill_price'],0,',',','). ' VNĐ'  ?>">
                 </div>
             </div>
         <?php } ?>
@@ -133,12 +133,12 @@
                 <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['user_name'] ?>">
             </div>
         </div>
-        <div class="d-flex mb-3">
+        <!-- <div class="d-flex mb-3">
             <label for="exampleInputEmail1" class="d-flex col-xl-3">Họ và tên</label>
             <div class="w-100 text-right">
                 <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['full_name'] ?>">
             </div>
-        </div>
+        </div> -->
         <div class="d-flex mb-3">
             <label for="exampleInputEmail1" class="d-flex col-xl-3">Ngày sinh</label>
             <div class="w-100 text-right">

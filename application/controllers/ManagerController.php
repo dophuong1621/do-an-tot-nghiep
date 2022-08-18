@@ -97,20 +97,20 @@ class ManagerController extends CI_Controller
 		$history = $this->Bill_details->history($id);
 		$this->data['title'] = 'Lịch sử đơn hàng';
 		$this->data['css'] = ['cont_order.css?v=' . version()];
-		$this->data['js'] = ['jquery.validate.min.js', 'cont_order.js?v=' . version()];
+		$this->data['js'] = ['jquery.validate.min.js', 'cont_order.js?v=' . version(),'order_history.js?v=' . version()];
 		$this->data['history'] = $history;
 		$this->data['content'] = '/order_history.php';
 		$this->load->view('manager_view', $this->data);
 	}
-	public function historyDetails(){
-		// $id = $this->session->userdata('user')['id'];
+	public function history_details(){
 		$id = $this->input->get('id');
-		$history = $this->Bill_details->historyDetails($id);
+		$history = $this->Bill_details->historyDetails($id); 
+		// var_dump($history);
 		$this->data['title'] = 'Chi tiết hoá đơn';
 		$this->data['css'] = ['cont_order.css?v=' . version()];
 		$this->data['js'] = ['jquery.validate.min.js', 'cont_order.js?v=' . version()];
-		$this->data['history'] = $history;
-		$this->data['content'] = '/order_history.php';
+		$this->data['details'] = $history;
+		$this->data['content'] = '/order_history_details.php';
 		$this->load->view('manager_view', $this->data);
 	}
 	public function mailSend()

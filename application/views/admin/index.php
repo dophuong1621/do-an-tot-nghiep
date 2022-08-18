@@ -84,11 +84,11 @@ $user_name = $infoAdmin['user_name'];
                     <span>Quản lý voucher</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Quản lý hoá đơn</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#collapseTwo">
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#collapseOne">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản lý hoá đơn</h6>
                         <a class="collapse-item" href="/admin/add_bill">Thêm hoá đơn</a>
@@ -99,10 +99,24 @@ $user_name = $infoAdmin['user_name'];
                 </div>
             </li>
             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Thống kê</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#collapseTwo">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Thống kê</h6>
+                        <a class="collapse-item" href="/admin/inventory">Hàng tồn</a>
+                        <a class="collapse-item" href="/admin/best_seller">Hàng bán chạy nhất</a>
+                        <a class="collapse-item" href="/admin/statistical">Doanh thu</a>
+                    </div>
+                </div>
+            </li>
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="/admin/statistical">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Thống kê</span></a>
-            </li>
+            </li> -->
             <!-- Divider -->
 
             <!-- Divider -->

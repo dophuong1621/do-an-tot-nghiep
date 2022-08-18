@@ -14,7 +14,7 @@ class Bills extends CI_Model
 	{
 		$this->db->select('bills.id,bills.bill_name,bills.user_id, bills.phone,bills.address, bills.card_name, bills.note,bills.total_trans,bills.voucher,total_voucher, total_price,bills.status,bills.created_at');
 		$this->db->join('users', 'users.id=bills.user_id');
-		$this->db->order_by('bills.id', 'DESC');
+		$this->db->order_by('id', 'DESC');
 		// $this->db->join('voucher', 'voucher.id=bills.voucher');
 		$this->db->where('bills.status', 0);
 		return $this->db->get($this->_table)->result_array();
@@ -24,6 +24,7 @@ class Bills extends CI_Model
 		$this->db->select('bills.id,bills.bill_name,bills.user_id, bills.phone,bills.address, bills.card_name, bills.note,bills.total_trans,bills.voucher,total_voucher, total_price,bills.status,bills.created_at');
 		$this->db->join('users', 'users.id=bills.user_id');
 		$this->db->where('bills.status', 1);
+		$this->db->order_by('id', 'DESC');
 		return $this->db->get($this->_table)->result_array();
 	}
 	public function canceled()
@@ -31,6 +32,7 @@ class Bills extends CI_Model
 		$this->db->select('bills.id,bills.bill_name,bills.user_id, bills.phone,bills.address, bills.card_name, bills.note,bills.total_trans,bills.voucher,total_voucher, total_price,bills.status,bills.created_at');
 		$this->db->join('users', 'users.id=bills.user_id');
 		$this->db->where('bills.status', 2);
+		$this->db->order_by('id', 'DESC');
 		return $this->db->get($this->_table)->result_array();
 	}
 	public function details($id)

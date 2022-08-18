@@ -1259,7 +1259,9 @@ function uploadImg(uploadimg, select, img) {
 }
 $(document).on("click", ".bankPopup", function () {
     $('#modal_info_bank').modal('show');
-    idCont = $(this).find('.contact').attr('data-link-id');
+    // idCont = $(this).find('.contact').attr('data-link-id');
+    idCont = $(this).parent().attr('data-id');
+    // console.log($(this).parent().attr('data-link-id'));
     // đổ dữ liệu thông tin liên hệ
     $.ajax({
         type: 'POST',
@@ -1272,10 +1274,11 @@ $(document).on("click", ".bankPopup", function () {
             res.forEach(data => {
                 var htmlPop = '';
                 htmlPop += '<div class="ctn_info_b">';
-                htmlPop += '<img src="/assets/images/tknh.png" alt="Tài khoản ngân hàng" class="icon_ttlh2">';
+                // htmlPop += '<img src="/assets/images/tknh.png" alt="Tài khoản ngân hàng" class="icon_ttlh2">';
                 // bank[data.subtitle]
-                htmlPop += '<p class="text_tknh1">' + $('[data-id="' + data.id + '"]').find('.t_nd').text() + '</p>';
-                htmlPop += '<p class="text_tknh2">' + $('[data-id="' + data.id + '"]').find('.t_ct').text() + '</p>';
+                htmlPop += '<p class="text_tknh1">' + bank[data.subtitle]  + '</p>';
+                htmlPop += '<p class="text_tknh1">' + data.subtitle  + '</p>';
+                htmlPop += '<p class="text_tknh2">' + data.content + '</p>';
                 htmlPop += '</div>';
                 $('#modal_info_bank .modal-body').html(htmlPop);
             });

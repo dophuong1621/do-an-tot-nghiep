@@ -67,13 +67,17 @@ $route['gio-hang.html'] = 'ManagerController/cart';
 $route['gio-hang.html?payment=(:num)'] = 'ManagerController/cart'; 
 $route['thong-tin-thanh-toan.html'] = 'ManagerController/billInfor'; 
 $route['lich-su-don-hang.html'] = 'ManagerController/orderHistory'; 
-$route['lich-su-don-hang?id=(:num).html'] = 'ManagerController/historyDetails'; 
+// $route['lich-su-don-hang?id=(:num)'] = 'ManagerController/orderHistory/$1'; 
+$route['chi-tiet-hoa-don.html'] = 'ManagerController/history_details/$1'; 
+$route['chi-tiet-hoa-don?id=(:num)'] = 'ManagerController/history_details/$1'; 
 $route['trang-ca-nhan-tk(:num).html'] = 'ManagerController/personalPage/$1'; 
 
 $route['admin'] = 'Admin/Views/Admin/index';
 $route['admin/login'] = 'Admin/Views/Admin/login';
 // thống kê
 $route['admin/statistical'] = 'Admin/Views/Admin/statistical';
+$route['admin/inventory'] = 'Admin/Views/Admin/inventory';
+$route['admin/best_seller'] = 'Admin/Views/Admin/best_seller';
 
 // đánh giá sản phẩm
 $route['admin/evaluate'] = 'Admin/Views/Admin/evaluate';

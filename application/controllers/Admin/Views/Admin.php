@@ -250,6 +250,22 @@ class Admin extends CI_Controller
 		// $this->data['details'] = $this->Bills->details($id);
 		$this->load->view('admin/index', $this->data);
 	}
+	public function inventory()
+	{
+		$this->checkLogin();
+		$this->data['title'] = 'Hàng tồn';
+		$this->data['css'] = ['/assets/admin/vendor/datatables/dataTables.bootstrap4.min.css', '/assets/admin/css/product.css'];
+		$this->data['js'] = [
+			'/assets/admin/vendor/datatables/jquery.dataTables.min.js',
+			'/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js',
+			'/assets/admin/js/demo/datatables-demo.js',
+			'/assets/admin/js/admin/jquery.tableToExcel.js',
+		];
+		$this->data['content'] = '/admin/inventory.php';
+		$this->data['products'] = $this->Products->info();
+
+		$this->load->view('admin/index', $this->data);
+	}
 	public function users()
 	{
 		$this->checkLogin();
@@ -317,7 +333,8 @@ class Admin extends CI_Controller
 		$this->data['js'] = [
 			'/assets/admin/vendor/datatables/jquery.dataTables.min.js',
 			'/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js',
-			'/assets/admin/js/demo/datatables-demo.js'
+			'/assets/admin/js/demo/datatables-demo.js',
+			'/assets/admin/js/admin/add_bill.js'
 		];
 		$this->data['content'] = '/admin/add_bill.php';
 		$id = $this->input->get('id');

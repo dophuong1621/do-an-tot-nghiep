@@ -42,14 +42,19 @@
                                     }else if($value['status'] == 2) {
                                         echo "Đã Huỷ";
                                     } ?></td>
-                                <td><a href="lich-su-don-hang?id=<?= $value['id'] ?>" class="btn btn-primary">Chi tiết</a></td>
+                                <td><a href="chi-tiet-hoa-don?id=<?= $value['id']?>" class="btn btn-primary">Chi tiết</a></td>
                                 <td><button class="btn btn-primary dgsp">Đánh giá</button></td>
                             </tr>
                         <? } ?>
                     </tbody>
                 </table>
+        
             </div>
         </div>
     </div>
+    <div class="ctn_ttcn">
+        <div class="k_ttcn_b">
+          </div>
+        </div>
 
 </div>

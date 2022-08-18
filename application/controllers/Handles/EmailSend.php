@@ -29,7 +29,7 @@ class EmailSend extends CI_Controller
         $emailContent .= '<p>Bạn đã đăng ký thành công. Bạn vui lòng ấn xác thực để có thể dùng dịch vụ của SmartID nha</p><br>';
         $emailContent .= '<div>Tài khoản của bạn là : <span>' . $to . '</span></div><br>';
         $emailContent .= '<div>Mật khẩu của bạn là : ' . $pass . '</div><br>';
-        $emailContent .= '<a href="https://cardvisitthongminh.timviec365.vn/xac-thuc-tai-khoan.html?email=' . md5($to) . '">Xác thực tài khoản</a> ';
+        $emailContent .= '<a href="http://localhost:1602//xac-thuc-tai-khoan.html?email=' . md5($to) . '">Xác thực tài khoản</a> ';
 
         $emailContent .= "</body></html>";
 
@@ -54,7 +54,7 @@ class EmailSend extends CI_Controller
         $this->email->message($emailContent);
         $this->email->send();
 
-        $this->session->set_flashdata('msg', "Mail đã được gửi thành công. Bạn vui lòng kiểm tra mail nhé ;) ");
+        $this->session->set_flashdata('msg', "Mail đã được gửi thành công. Bạn vui lòng kiểm tra mail nhé ! ");
         $this->session->set_flashdata('msg_class', 'alert-success');
     }
     public function forgotPass()
@@ -71,8 +71,8 @@ class EmailSend extends CI_Controller
             $emailContent = '<!DOCTYPE><html><head></head><body>';
 
 
-            $emailContent .= '<p>Bạn vui lòng bấm nút dưới để đổi mật khẩu nhé </p><br>';
-            $emailContent .= '<a href="https://cardvisitthongminh.timviec365.vn/dat-lai-mat-khau.html?email=' . md5($to) . '" class="changePass">Cập nhật mật khẩu</a> ';
+            $emailContent .= '<p>Bạn vui lòng bấm nút dưới để đổi mật khẩu  </p><br>';
+            $emailContent .= '<a href="http://localhost:1602//dat-lai-mat-khau.html?email=' . md5($to) . '" class="changePass">Cập nhật mật khẩu</a> ';
 
 
             $emailContent .= "</body></html>";

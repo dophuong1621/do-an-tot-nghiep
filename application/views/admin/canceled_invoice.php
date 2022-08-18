@@ -10,7 +10,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -24,7 +24,7 @@
                             <th>Phí giao hàng</th>
                             <th>Tổng tiền</th>
                             <th>Ngày mua</th>
-                            <th>Trạng thái</th>
+                            <!-- <th>Trạng thái</th> -->
                             <th>Chức năng</th>
 
                         </tr>
@@ -47,9 +47,9 @@
                                 <td><?= $value['total_trans'] ?></td>
                                 <td><?= number_format($value['total_price'], 0, ',', ',') ?></td>
                                 <td><?= date('Y-m-d',$value['created_at']) ?></td>
-                                <td><?php if ($value['status'] == 2) {
+                                <!-- <td><?php if ($value['status'] == 2) {
                                         echo 'Đã huỷ';
-                                    } ?></td>
+                                    } ?></td> -->
                                 <td class="d-flex justify-content-center">
                                     <a href="/admin/add_bill ?>" class="btn btn-primary">Khôi phục</a>
                                 </td>

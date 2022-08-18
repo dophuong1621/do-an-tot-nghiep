@@ -53,4 +53,38 @@ class Bill extends CI_Controller
             'message' => $message,
         ]);
     }
+    public function add_bill()
+    {
+        $name = $this->input->post('name');
+        $phone = $this->input->post('phone');
+        $product_name = $this->input->post('product_name');
+        $amount = $this->input->post('amount');
+        $card_name = $this->input->post('card_name');
+        $voucher = $this->input->post('voucher');
+        $note = $this->input->post('note');
+
+        $result = false;
+        $message = "Thêm hoá đơn không thành công";
+        if ($name != "" && $product_name != "" && $phone != "" && $amount != "" && $card_name != "") {
+            $data = [
+                'vou_name' => $name,
+                'vou_coupon' => $phone,
+                'product_name ' => $product_name,
+                'amount' => $amount,
+                'ticket_number' => $card_name,
+                'remaining_tickets' => $card_name,
+                'voucher' => $voucher,
+                'note' => $note,
+                'created_at' => time(),
+            ];
+
+            $this->Vouchers->insert($data);
+            $result = true;
+            $message = "Thêm hoá đơn thành công";
+        }
+        echo json_encode([
+            'result' => $result,
+            'message' => $message
+        ]);
+    }
 }
