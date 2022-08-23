@@ -63,4 +63,12 @@ class Bills extends CI_Model
 		$this->db->join('product', 'bill_details.product_id=product.id', 'right');
 		return $this->db->get($this->_table2)->result_array();
 	}
+	public function best_seller()
+	{
+		$this->db->select('*');
+		// $this->db->group_by('bill_details');
+		$this->db->order_by('sum(product_id)', 'DESC');
+		$this->db->count_all_results('product_id');
+		return $this->db->get($this->_table2)->result_array();
+	}
 }

@@ -74,6 +74,14 @@ class BillInforController extends CI_Controller
                         'bill_price' => $result['money'],
                         'amount' => $result['amount'],
                     ];
+                    // $product_id = $result['id'];
+                    // $pro = $this->Products->select($product_id);
+                    // $remain = $pro['amount'] - 1;
+                    // $data = [
+                    //     'amount' => $remain,
+                    // ];
+                    // $this->Products->update($data, $result['id']);
+
                     $this->Pay_models->addBillDetails($data_detail);
                 }
             }

@@ -57,7 +57,7 @@ $user_name = $infoAdmin['user_name'];
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/admin">
+                <a class="nav-link" href="/admin/statistical">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Trang chủ</span></a>
             </li>
@@ -74,9 +74,16 @@ $user_name = $infoAdmin['user_name'];
                     <span>Quản lý sản phẩm</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin/evaluate">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Quản lý đánh giá sản phẩm</span></a>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#collapseOne">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Quản lý đánh giá sản phẩm</h6>
+                        <a class="collapse-item" href="/admin/unapproved_review">Đánh giá chưa duyệt</a>
+                        <a class="collapse-item" href="/admin/approved_review">Đánh giá đã duyệt</a>
+                    </div>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/admin/voucher">

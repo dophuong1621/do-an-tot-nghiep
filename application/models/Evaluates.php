@@ -14,13 +14,27 @@ class Evaluates extends CI_Model
 		$this->db->insert($this->_table, $data);
 		return $this->db->insert_id();
 	}
+	public function update($data, $id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->update($this->_table, $data);
+	}
 	public function info()
 	{
 		$this->db->select('product.*,evaluates.*');
 		$this->db->join('product', 'product.id=evaluates.product_id');
+		$this->db->where('status', '0');
+		$this->db->order_by('evaluates.id', 'DESC');
 		return $this->db->get($this->_table)->result_array();
 	}
-	
+	public function info1()
+	{
+		$this->db->select('product.*,evaluates.*');
+		$this->db->join('product', 'product.id=evaluates.product_id');
+		$this->db->where('status', '1');
+		$this->db->order_by('evaluates.id', 'DESC');
+		return $this->db->get($this->_table)->result_array();
+	}
 	public function details($id)
 	{
 		$this->db->select('product.*,users.*,evaluates.*');
@@ -36,41 +50,57 @@ class Evaluates extends CI_Model
 		$this->db->limit(4);
 		$this->db->where([
 			'product_id' => $id,
+			'status' => 1,
 		]);
 		return $this->db->get($this->_table)->result_array();
 	}
 	public function avg($id)
 	{
 		$this->db->select('AVG(star) as avg');
-		$this->db->where('product_id', $id);
+		$this->db->where([
+			'product_id' => $id,
+			'status' => 1,
+		]);
 		return $this->db->get($this->_table)->row_array();
 	}
 	public function star5($id)
 	{
 		$this->db->select('COUNT(star) as count');
 		$this->db->where('star', 5);
-		$this->db->where('product_id', $id);
+		$this->db->where([
+			'product_id' => $id,
+			'status' => 1,
+		]);
 		return $this->db->get($this->_table)->row_array();
 	}
 	public function star4($id)
 	{
 		$this->db->select('COUNT(star) as count');
 		$this->db->where('star', 4);
-		$this->db->where('product_id', $id);
+		$this->db->where([
+			'product_id' => $id,
+			'status' => 1,
+		]);
 		return $this->db->get($this->_table)->row_array();
 	}
 	public function star3($id)
 	{
 		$this->db->select('COUNT(star) as count');
 		$this->db->where('star', 3);
-		$this->db->where('product_id', $id);
+		$this->db->where([
+			'product_id' => $id,
+			'status' => 1,
+		]);
 		return $this->db->get($this->_table)->row_array();
 	}
 	public function star2($id)
 	{
 		$this->db->select('COUNT(star) as count');
 		$this->db->where('star', 2);
-		$this->db->where('product_id', $id);
+		$this->db->where([
+			'product_id' => $id,
+			'status' => 1,
+		]);
 		return $this->db->get($this->_table)->row_array();
 	}
 
@@ -78,13 +108,19 @@ class Evaluates extends CI_Model
 	{
 		$this->db->select('COUNT(star) as count');
 		$this->db->where('star', 1);
-		$this->db->where('product_id', $id);
+		$this->db->where([
+			'product_id' => $id,
+			'status' => 1,
+		]);
 		return $this->db->get($this->_table)->row_array();
 	}
 	public function count($id)
 	{
 		$this->db->select('COUNT(id) as count');
-		$this->db->where('product_id', $id);
+		$this->db->where([
+			'product_id' => $id,
+			'status' => 1,
+		]);
 		return $this->db->get($this->_table)->row_array();
 	}
 	public function get_current_page_records($limit, $start) 

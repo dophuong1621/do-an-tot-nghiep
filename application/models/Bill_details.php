@@ -11,7 +11,7 @@ class Bill_details extends CI_Model
 	}
 	public function history($id)
 	{
-		$this->db->select('bills.id,bills.bill_name,product.name, bill_details.amount,bill_details.bill_price, bills.card_name, bills.note,bills.total_trans,bills.voucher,bills.status,bills.created_at');
+		$this->db->select('bills.id,bills.bill_name,product.name,product.image, bill_details.amount,bill_details.bill_price, bills.card_name, bills.note,bills.total_trans,bills.voucher,bills.status,bills.created_at');
 		$this->db->where('bills.user_id', $id);
 		$this->db->join('bills', 'bill_details.bill_id=bills.id');
 		$this->db->join('product', 'bill_details.product_id=product.id', 'right');

@@ -266,6 +266,22 @@ class Admin extends CI_Controller
 
 		$this->load->view('admin/index', $this->data);
 	}
+	public function best_seller()
+	{
+		$this->checkLogin();
+		$this->data['title'] = 'Hàng bán chạy ';
+		$this->data['css'] = ['/assets/admin/vendor/datatables/dataTables.bootstrap4.min.css', '/assets/admin/css/product.css'];
+		$this->data['js'] = [
+			'/assets/admin/vendor/datatables/jquery.dataTables.min.js',
+			'/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js',
+			'/assets/admin/js/demo/datatables-demo.js',
+			'/assets/admin/js/admin/jquery.tableToExcel.js',
+		];
+		$this->data['content'] = '/admin/best_seller.php';
+		$this->data['best_seller'] = $this->Bills->best_seller();var_dump($this->Bills->best_seller());
+
+		$this->load->view('admin/index', $this->data);
+	}
 	public function users()
 	{
 		$this->checkLogin();
@@ -295,19 +311,37 @@ class Admin extends CI_Controller
 		$this->data['details'] = $this->Users->details($id);
 		$this->load->view('admin/index', $this->data);
 	}
-	public function evaluate()
+	public function unapproved_review()
 	{
 		$this->checkLogin();
-		$this->data['title'] = 'Quản lý đánh giá sản phẩm';
+		$this->data['title'] = 'Đánh giá sản phẩm chưa duyệt';
 		$this->data['css'] = ['/assets/admin/vendor/datatables/dataTables.bootstrap4.min.css', '/assets/admin/css/product.css'];
 		$this->data['js'] = [
 			'/assets/admin/vendor/datatables/jquery.dataTables.min.js',
 			'/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js',
 			'/assets/admin/js/demo/datatables-demo.js',
-			'/assets/admin/js/admin/add_voucher.js'
+			'/assets/admin/js/admin/add_voucher.js',
+			'/assets/admin/js/admin/una_review.js',
 		];
-		$this->data['content'] = '/admin/evaluate.php';
+		$this->data['content'] = '/admin/unapproved_review.php';
 		$this->data['eva'] = $this->Evaluates->info();
+		$this->load->view('admin/index', $this->data);
+	}
+	public function approved_review()
+	{
+		$this->checkLogin();
+		$this->data['title'] = 'Đánh giá sản phẩm đã duyệt';
+		$this->data['css'] = ['/assets/admin/vendor/datatables/dataTables.bootstrap4.min.css', '/assets/admin/css/product.css'];
+		$this->data['js'] = [
+			'/assets/admin/vendor/datatables/jquery.dataTables.min.js',
+			'/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js',
+			'/assets/admin/js/demo/datatables-demo.js',
+			'/assets/admin/js/admin/add_voucher.js',
+			'/assets/admin/js/admin/app_review.js',
+			
+		];
+		$this->data['content'] = '/admin/approved_review.php';
+		$this->data['eva'] = $this->Evaluates->info1();
 		$this->load->view('admin/index', $this->data);
 	}
 	public function evaluate_details()

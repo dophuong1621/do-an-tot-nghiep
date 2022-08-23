@@ -10,8 +10,8 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <button class="xuatEx btn btn-primary " style="float:right;" >Xuất excel</button>
+                <table class="table table-bordered" id="" width="100%" cellspacing="0">
+                    <button class="xuatEx btn btn-primary " style="float:right;">Xuất excel</button>
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -22,7 +22,8 @@
                             <th>Tên người đánh giá</th>
                             <th>Sao đánh giá</th>
                             <th>Nội dung</th>
-                            <th class="d-flex justify-content-center">Chức năng</th>
+                            <th>Ngày đánh giá</th>
+                            <th>Chức năng</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,7 +37,14 @@
                                 <td><?= $value['name_eva'] ?></td>
                                 <td><?= $value['star'] ?></td>
                                 <td><?= $value['content'] ?></td>
+                                <td><?= ($value['created_at'] == 0) ? "x" : date('H:i:s d/m/Y', $value["created_at"]) ?></td>
                                 <td class="d-flex justify-content-center">
+                                    <button type="button" data-id="<?= $value['id'] ?>" class="btn btn-primary duyet">
+                                        Duyệt
+                                    </button>
+                                    <!-- <button type="button" data-id="<?= $value['id'] ?>" class="btn btn-primary huy" style="margin-right: 15px">
+                                        Huỷ
+                                    </button> -->
                                     <a href="/admin/evaluate_details?id=<?= $value['id'] ?>" class="btn btn-primary">Chi tiết</a>
                                 </td>
                             </tr>

@@ -34,9 +34,9 @@ $(document).ready(function() {
                 dataType: "json",
                 success: function(response) {
                     check = response.result;
-                    alert(response.message);
+                    // alert(response.message);
                     if (check == true) {
-                        window.location.href = '/admin';
+                        window.location.href = '/admin/statistical';
                     } 
                 },
             });

@@ -80,7 +80,8 @@ $route['admin/inventory'] = 'Admin/Views/Admin/inventory';
 $route['admin/best_seller'] = 'Admin/Views/Admin/best_seller';
 
 // đánh giá sản phẩm
-$route['admin/evaluate'] = 'Admin/Views/Admin/evaluate';
+$route['admin/unapproved_review'] = 'Admin/Views/Admin/unapproved_review';
+$route['admin/approved_review'] = 'Admin/Views/Admin/approved_review';
 $route['admin/evaluate_details'] = 'Admin/Views/Admin/evaluate_details/$1';
 $route['admin/evaluate_details?id=(:num)'] = 'Admin/Views/Admin/evaluate_details/$1';
 // quản lý người dùng
