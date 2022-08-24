@@ -11,6 +11,7 @@ class Bill extends CI_Controller
         $this->load->helper('array_helper');
         $this->load->library("session");
         $this->load->model("Bills");
+        $this->load->model("Voucher");
         $this->load->helper('fun_helper');
     }
     public function unapproved()
@@ -67,8 +68,8 @@ class Bill extends CI_Controller
         $message = "Thêm hoá đơn không thành công";
         if ($name != "" && $product_name != "" && $phone != "" && $amount != "" && $card_name != "") {
             $data = [
-                'vou_name' => $name,
-                'vou_coupon' => $phone,
+                'bill_name' => $name,
+                'phone' => $phone,
                 'product_name ' => $product_name,
                 'amount' => $amount,
                 'ticket_number' => $card_name,
@@ -78,7 +79,7 @@ class Bill extends CI_Controller
                 'created_at' => time(),
             ];
 
-            $this->Vouchers->insert($data);
+            $this->Bills->insert($data);
             $result = true;
             $message = "Thêm hoá đơn thành công";
         }

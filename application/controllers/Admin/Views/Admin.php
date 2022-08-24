@@ -278,7 +278,7 @@ class Admin extends CI_Controller
 			'/assets/admin/js/admin/jquery.tableToExcel.js',
 		];
 		$this->data['content'] = '/admin/best_seller.php';
-		$this->data['best_seller'] = $this->Bills->best_seller();var_dump($this->Bills->best_seller());
+		$this->data['best_seller'] = $this->Bills->best_seller();var_dump($this->Bills->best_seller());	
 
 		$this->load->view('admin/index', $this->data);
 	}

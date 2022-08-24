@@ -105,8 +105,7 @@ class ManagerController extends CI_Controller
 	public function history_details(){
 		$id = $this->input->get('id');
 		$history = $this->Bill_details->historyDetails($id); 
-		// var_dump($history);
-		$this->data['title'] = 'Chi tiết hoá đơn';
+		$this->data['title'] = 'Chi tiết đơn hàng';
 		$this->data['css'] = ['cont_order.css?v=' . version()];
 		$this->data['js'] = ['jquery.validate.min.js', 'cont_order.js?v=' . version()];
 		$this->data['details'] = $history;

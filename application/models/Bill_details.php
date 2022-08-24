@@ -15,6 +15,7 @@ class Bill_details extends CI_Model
 		$this->db->where('bills.user_id', $id);
 		$this->db->join('bills', 'bill_details.bill_id=bills.id');
 		$this->db->join('product', 'bill_details.product_id=product.id', 'right');
+		$this->db->order_by('id', 'DESC');
 		return $this->db->get($this->_table)->result_array();
 	}
 	public function historyDetails($id)

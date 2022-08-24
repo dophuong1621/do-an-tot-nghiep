@@ -56,6 +56,10 @@ class Bills extends CI_Model
 		$this->db->where('id', $id);
 		return $this->db->update($this->_table, $data);
 	}
+	public function insert($data) {
+		$this->db->insert($this->_table, $data);
+		return $this->db->insert_id();
+	}
 	public function history($id)
 	{
 		$this->db->where('user_id', $id);
@@ -65,10 +69,10 @@ class Bills extends CI_Model
 	}
 	public function best_seller()
 	{
-		$this->db->select('*');
-		// $this->db->group_by('bill_details');
-		$this->db->order_by('sum(product_id)', 'DESC');
-		$this->db->count_all_results('product_id');
+		$this->db->select('SUM(bill_details.amount) as sum_amount, product.name, product.id, product.image');
+		$this->db->join('product', 'bill_details.product_id=product.id', 'right');	
+		$this->db->group_by('product.name');
+		$this->db->order_by('sum_amount', 'DESC');
 		return $this->db->get($this->_table2)->result_array();
 	}
 }

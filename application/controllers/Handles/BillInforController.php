@@ -14,6 +14,7 @@ class BillInforController extends CI_Controller
         $this->load->model('Vouchers');
         $this->load->model('District');
         $this->load->model('Users');
+        $this->load->model('Products');
     }
     function pay()
     {
@@ -74,15 +75,15 @@ class BillInforController extends CI_Controller
                         'bill_price' => $result['money'],
                         'amount' => $result['amount'],
                     ];
-                    // $product_id = $result['id'];
-                    // $pro = $this->Products->select($product_id);
-                    // $remain = $pro['amount'] - 1;
-                    // $data = [
-                    //     'amount' => $remain,
-                    // ];
-                    // $this->Products->update($data, $result['id']);
+                    $product_id = $result['id'];
+                    $pro = $this->Products->select($product_id);
+                    $remain = $pro['amount'] - 1;
+                    $so_luong = [
+                        'amount' => $remain,
+                    ];
+                    $this->Products->update($so_luong, $result['id']);
 
-                    $this->Pay_models->addBillDetails($data_detail);
+                    $this->Pay_models->addBillDetails($data_detail); 
                 }
             }
             if ($voucher != 'undefined') {

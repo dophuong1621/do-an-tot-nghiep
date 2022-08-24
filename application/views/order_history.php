@@ -34,7 +34,7 @@
                                 <td><?= $value['name'] ?></td>
                                 <td><img src="/assets/product_image/<?= $value['image'] ?>" alt="Thẻ SmartID365" class="img_card" style="width:45px;height:45px;margin-right:10px;"></td>
                                 <td><?= $value['amount'] ?></td>
-                                <td><?= number_format($value['bill_price'], 0, ',', ',') . ' VNĐ' ?></td>
+                                <td><?= number_format($value['bill_price'], 0, ',', '.') . ' VNĐ' ?></td>
                                 <td><?= $value['note'] ?></td>
                                 <td><?= ($value['created_at'] == 0) ? "x" : date('H:i:s d/m/Y', $value["created_at"]) ?></td>
                                 <td><?php if ($value['status'] == 0) {
@@ -44,7 +44,7 @@
                                     } else if ($value['status'] == 2) {
                                         echo "Đã Huỷ";
                                     } ?></td>
-                                <td><a href="chi-tiet-hoa-don?id=<?= $value['id'] ?>" class="btn btn-primary">Chi tiết</a></td>
+                                <td><a href="chi-tiet-don-hang?id=<?= $value['id'] ?>" class="btn btn-primary">Chi tiết</a></td>
                                 <!-- <td><button class="btn btn-primary dgsp">Đánh giá</button></td> -->
                             </tr>
                         <? } ?>

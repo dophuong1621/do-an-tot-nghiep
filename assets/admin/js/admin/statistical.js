@@ -32,7 +32,7 @@ $(document).ready(function () {
                                 <td>`+ value.card_name + `</td>
                                 <td>`+ value.note + `</td>
                                 <td>`+ value.total_trans + `</td>
-                                <td>`+ date('Y-m-d', value.created_at) + `</td>
+                                <td>`+ `<?= date('Y-m-d', `+value.created_at+`) ?></td>
                                 <td>`+ value.total_price.replace(/\B(?=(\d{3})+(?!\d))/g, ',') + `</td>
                                 <td class="d-flex justify-content-center">
                                     <a href="/admin/approved_details?id=<?= $value['id'] ?>" class="btn btn-primary">Chi tiết</a>

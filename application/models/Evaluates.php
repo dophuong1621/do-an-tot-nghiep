@@ -60,7 +60,7 @@ class Evaluates extends CI_Model
 		$this->db->where([
 			'product_id' => $id,
 			'status' => 1,
-		]);
+		]);	
 		return $this->db->get($this->_table)->row_array();
 	}
 	public function star5($id)
