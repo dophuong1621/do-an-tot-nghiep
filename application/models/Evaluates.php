@@ -114,11 +114,52 @@ class Evaluates extends CI_Model
 		]);
 		return $this->db->get($this->_table)->row_array();
 	}
+	public function count1($id)
+	{
+		$this->db->select('COUNT(id) as count');
+		$this->db->where([
+			'product_id' => $id,
+			'star' => 1,
+			'status' => 1,
+		]);
+		return $this->db->get($this->_table)->row_array();
+	}
+	public function count2($id)
+	{
+		$this->db->select('COUNT(id) as count');
+		$this->db->where([
+			'product_id' => $id,
+			'star' => 2,
+			'status' => 1,
+		]);
+		return $this->db->get($this->_table)->row_array();
+	}
+	public function count3($id)
+	{
+		$this->db->select('COUNT(id) as count');
+		$this->db->where([
+			'product_id' => $id,
+			'star' => 3,
+			'status' => 1,
+		]);
+		return $this->db->get($this->_table)->row_array();
+	}
+	public function count4($id)
+	{
+		$this->db->select('COUNT(id) as count');
+		$this->db->where([
+			'product_id' => $id,
+			'star' => 4,
+			'status' => 1,
+		]);
+		return $this->db->get($this->_table)->row_array();
+	}
 	public function count($id)
 	{
 		$this->db->select('COUNT(id) as count');
 		$this->db->where([
 			'product_id' => $id,
+			'star' => 5,
 			'status' => 1,
 		]);
 		return $this->db->get($this->_table)->row_array();

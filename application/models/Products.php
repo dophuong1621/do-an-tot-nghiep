@@ -22,6 +22,15 @@ class Products extends CI_Model
 		$this->db->where('id', $id);
 		return $this->db->get($this->_table)->row_array();
 	}
+	public function select_for() {
+		$this->db->select('*');
+		return $this->db->get($this->_table)->result_array();
+	}
+	public function selectPrice($id) {
+		$this->db->select('*');
+		$this->db->where('id', $id);
+		return $this->db->get($this->_table)->row_array();
+	}
 	public function delete($id) {
 		$this->db->where('id',$id);
 		return $this->db->delete($this->_table);

@@ -4,75 +4,55 @@
         <div class="d-flex mb-3">
             <label for="exampleInputEmail1" class="d-flex col-xl-3">ID</label>
             <div class="w-100 text-right">
-                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['id'] ?>">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $id ?>">
             </div>
         </div>
         <div class="d-flex mb-3">
-            <label for="exampleInputEmail1" class="d-flex col-xl-3">Email</label>
+            <label for="exampleInputEmail1" class="d-flex col-xl-3">Tên sản phẩm</label>
             <div class="w-100 text-right">
-                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['email'] ?>">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['name'] ?>">
             </div>
         </div>
         <div class="d-flex mb-3">
-            <label for="exampleInputEmail1" class="d-flex col-xl-3">Tên hiển thị</label>
+            <label for="exampleInputEmail1" class="d-flex col-xl-3">Giá sản phẩm</label>
             <div class="w-100 text-right">
-                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['user_name'] ?>">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= number_format($details[0]['price'],'0',',','.') ?>">
             </div>
         </div>
         <div class="d-flex mb-3">
-            <label for="exampleInputEmail1" class="d-flex col-xl-3">Họ và tên</label>
+            <label for="exampleInputEmail1" class="d-flex col-xl-3">Số lượng</label>
             <div class="w-100 text-right">
-                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['full_name'] ?>">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['amount'] ?>">
             </div>
         </div>
         <div class="d-flex mb-3">
-            <label for="exampleInputEmail1" class="d-flex col-xl-3">Ngày sinh</label>
+            <label for="exampleInputEmail1" class="d-flex col-xl-3">Tên Voucher</label>
             <div class="w-100 text-right">
-                <input type="date" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['date_birth'] != 0? date('Y-m-d', $details[0]['date_birth']) : ""?>">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['vou_coupon'] ?>">
             </div>
         </div>
-        <div class="d-flex mb-3">
-            <label for="exampleInputEmail1" class="d-flex col-xl-3">Giới Tính</label>
-            <div class="w-100 text-right">
-                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= ($details[0]['gender'] == 0) ? "Nam" : "Nữ" ?>">
-            </div>
-        </div>
-        <div class="d-flex mb-3">
-            <label for="exampleInputEmail1" class="d-flex col-xl-3">Công ty</label>
-            <div class="w-100 text-right">
-                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['company'] ?>">
-            </div>
-        </div>
-        <div class="d-flex mb-3">
-            <label for="exampleInputEmail1" class="d-flex col-xl-3">Chức vụ</label>
-            <div class="w-100 text-right">
-                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['position'] ?>">
-            </div>
-        </div>
-        <div class="d-flex mb-3">
-            <label for="exampleInputEmail1" class="d-flex col-xl-3">Mô tả</label>
-            <div class="w-100 text-right">
-                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['descrip'] ?>">
-            </div>
-        </div>
-        <div class="d-flex mb-3">
-            <label for="exampleInputEmail1" class="d-flex col-xl-3">Trạng thái</label>
-            <div class="w-100 text-right">
-                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= ($details[0]['status'] == 0) ? "Chưa xác thực" : "Đã xác thực" ?>">
-            </div>
-        </div>
-
         <?php
-        foreach ($details as $key => $value) {
-            if ($value['title'] != NULL && $value['content'] != NULL) {
+            if($details[0]['voucher'] != NUll){
                 echo '<div class="d-flex mb-3">
-                <label for="exampleInputEmail1" class="d-flex col-xl-3">' . $value['title'] . '</label>
+                <label for="exampleInputEmail1" class="d-flex col-xl-3">Giá giảm</label>
                 <div class="w-100 text-right">
-                    <input type="text" class="form-control col-xl-12 mb-1" disabled value="' . $value['content'] . '">
+                    <input type="text" class="form-control col-xl-12 mb-1" disabled value="'. $details[0]['total_voucher'].'">
                 </div>
             </div>';
             }
-        }
         ?>
+        <div class="d-flex mb-3">
+            <label for="exampleInputEmail1" class="d-flex col-xl-3">Tổng tiền</label>
+            <div class="w-100 text-right">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= number_format($details[0]['total_price'],'0',',','.')?>">
+            </div>
+        </div>
+        
+        <div class="d-flex mb-3">
+            <label for="exampleInputEmail1" class="d-flex col-xl-3">Ngày đặt hàng</label>
+            <div class="w-100 text-right">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= date('H:i:s d-m-Y',$details[0]['created_at']) ?>">
+            </div>
+        </div>
     </div>
 </div>

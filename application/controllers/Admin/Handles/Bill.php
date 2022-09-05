@@ -11,7 +11,8 @@ class Bill extends CI_Controller
         $this->load->helper('array_helper');
         $this->load->library("session");
         $this->load->model("Bills");
-        $this->load->model("Voucher");
+        $this->load->model("Vouchers");
+        $this->load->model("Products");
         $this->load->helper('fun_helper');
     }
     public function unapproved()
@@ -63,7 +64,6 @@ class Bill extends CI_Controller
         $card_name = $this->input->post('card_name');
         $voucher = $this->input->post('voucher');
         $note = $this->input->post('note');
-
         $result = false;
         $message = "Thêm hoá đơn không thành công";
         if ($name != "" && $product_name != "" && $phone != "" && $amount != "" && $card_name != "") {
@@ -72,20 +72,53 @@ class Bill extends CI_Controller
                 'phone' => $phone,
                 'product_name ' => $product_name,
                 'amount' => $amount,
-                'ticket_number' => $card_name,
-                'remaining_tickets' => $card_name,
                 'voucher' => $voucher,
+                'total_trans' => 0,
+                'card_name' => $card_name,
                 'note' => $note,
                 'created_at' => time(),
             ];
-
-            $this->Bills->insert($data);
+            if($voucher != ''){
+                $data = [
+                    'ticket_number' => $card_name,
+                    'remaining_tickets' => $card_name,
+                ];
+            }
+            // $this->Bills->insert($data);
             $result = true;
             $message = "Thêm hoá đơn thành công";
         }
         echo json_encode([
             'result' => $result,
             'message' => $message
+        ]);
+    }
+    public function price_product()
+    {
+        $name = $this->input->post('name');
+        $result = false;
+        if ($name != '') {
+            $pro_name = $this->Products->selectPrice($name);
+            $data = $pro_name;
+            $result = true;
+        }
+        echo json_encode([
+            'result' => $result,
+            'data' => $data,
+        ]);
+    }
+    public function vou()
+    {
+        $vou = $this->input->post('vou');
+        $result = false;
+        if ($vou != '') {
+            $voucher = $this->Vouchers->selectVou($vou);
+            $data = $voucher;
+            $result = true;
+        }
+        echo json_encode([
+            'result' => $result,
+            'data' => $data,
         ]);
     }
 }

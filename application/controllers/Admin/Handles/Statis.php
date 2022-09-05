@@ -21,7 +21,7 @@ class Statis extends CI_Controller
         $date_to = ($date_to != "") ? strtotime($date_to) : 0;
         $result = false;
         $message = 'Tìm kiếm không thành công';
-        if ($date_from < $date_to) {
+        if ($date_from < $date_to ) {
             if ($date_from != '' && $date_to != '') {
                 $date =  $this->Statistical->search($date_from, $date_to);
                 $count = count($date);

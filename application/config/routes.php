@@ -68,9 +68,9 @@ $route['gio-hang.html?payment=(:num)'] = 'ManagerController/cart';
 $route['thong-tin-thanh-toan.html'] = 'ManagerController/billInfor'; 
 $route['lich-su-don-hang.html'] = 'ManagerController/orderHistory'; 
 // $route['lich-su-don-hang?id=(:num)'] = 'ManagerController/orderHistory/$1'; 
-$route['chi-tiet-hoa-don.html'] = 'ManagerController/history_details/$1'; 
-$route['chi-tiet-hoa-don?id=(:num)'] = 'ManagerController/history_details/$1'; 
-$route['trang-ca-nhan-tk(:num).html'] = 'ManagerController/personalPage/$1'; 
+$route['chi-tiet-don-hang'] = 'ManagerController/history_details'; 
+$route['chi-tiet-don-hang?id=(:num)'] = 'ManagerController/history_details/$1'; 
+$route['trang-ca-nhan-tk(:any).html'] = 'ManagerController/personalPage/$1'; 
 
 $route['admin'] = 'Admin/Views/Admin/index';
 $route['admin/login'] = 'Admin/Views/Admin/login';

@@ -22,6 +22,11 @@ class Vouchers extends CI_Model
 		$this->db->where('id', $id);
 		return $this->db->get($this->_table)->row_array();
 	}
+	public function selectVou($id) {
+		$this->db->select('*');
+		$this->db->where('vou_coupon', $id);
+		return $this->db->get($this->_table)->row_array();
+	}
     public function insert($data) {
 		$this->db->insert($this->_table, $data);
 		return $this->db->insert_id();

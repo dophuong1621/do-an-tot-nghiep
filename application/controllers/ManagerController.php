@@ -103,12 +103,15 @@ class ManagerController extends CI_Controller
 		$this->load->view('manager_view', $this->data);
 	}
 	public function history_details(){
+		// var_dump(1);
 		$id = $this->input->get('id');
 		$history = $this->Bill_details->historyDetails($id); 
 		$this->data['title'] = 'Chi tiết đơn hàng';
 		$this->data['css'] = ['cont_order.css?v=' . version()];
 		$this->data['js'] = ['jquery.validate.min.js', 'cont_order.js?v=' . version()];
 		$this->data['details'] = $history;
+		$session = $this->session->userdata('user');
+		$this->data['id'] = $id;
 		$this->data['content'] = '/order_history_details.php';
 		$this->load->view('manager_view', $this->data);
 	}
@@ -189,6 +192,10 @@ class ManagerController extends CI_Controller
 		$this->data['star2'] = $this->Evaluates->star2($id);
 		$this->data['star1'] = $this->Evaluates->star1($id);
 		$this->data['avg'] = $this->Evaluates->avg($id);
+		$this->data['count1'] = $this->Evaluates->count1($id);
+		$this->data['count2'] = $this->Evaluates->count2($id);
+		$this->data['count3'] = $this->Evaluates->count3($id);
+		$this->data['count4'] = $this->Evaluates->count4($id);
 		$this->data['count'] = $this->Evaluates->count($id);
 		$this->load->view('manager_view', $this->data);
 	}

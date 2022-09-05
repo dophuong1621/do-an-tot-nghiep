@@ -15,7 +15,7 @@
                     <!-- <button class="xuatEx btn btn-primary" style="float:right;" >Xuất excel</button> -->
                     <thead>
                         <tr>
-                            <!-- <th>Mã đơn hàng</th> -->
+                            <th>Mã đơn hàng</th>
                             <th>Tên sản phẩm</th>
                             <th>Ảnh</th>
                             <th>Số lượng</th>
@@ -30,7 +30,7 @@
                     <tbody>
                         <? foreach ($history as $value) { ?>
                             <tr>
-                                <!-- <td><?= $value['id'] ?></td> -->
+                                <td><?= $value['id'] ?></td>
                                 <td><?= $value['name'] ?></td>
                                 <td><img src="/assets/product_image/<?= $value['image'] ?>" alt="Thẻ SmartID365" class="img_card" style="width:45px;height:45px;margin-right:10px;"></td>
                                 <td><?= $value['amount'] ?></td>

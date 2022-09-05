@@ -196,7 +196,7 @@
                                                                                                         echo "0";
                                                                                                     } ?>%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <p class="sum_star"><?= $count['count'] ?></p>
+                                    <p class="sum_star"><?= $count4['count'] ?></p>
                                 </div>
                                 <div class="star_k d-flex align-items-center">
                                     <div class="star-rating">
@@ -222,7 +222,7 @@
                                                                                                         echo "0";
                                                                                                     } ?>%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <p class="sum_star"><?= $count['count'] ?></p>
+                                    <p class="sum_star"><?= $count3['count'] ?></p>
                                 </div>
                                 <div class="star_k d-flex align-items-center">
                                     <div class="star-rating">
@@ -248,7 +248,7 @@
                                                                                                         echo "0";
                                                                                                     } ?>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <p class="sum_star"><?= $count['count'] ?></p>
+                                    <p class="sum_star"><?= $count2['count'] ?></p>
                                 </div>
                                 <div class="star_k d-flex align-items-center">
                                     <div class="star-rating">
@@ -274,7 +274,7 @@
                                                                                                         echo "0";
                                                                                                     } ?>%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <p class="sum_star"><?= $count['count'] ?></p>
+                                    <p class="sum_star"><?= $count1['count'] ?></p>
                                 </div>
                             </div>
                         </div>

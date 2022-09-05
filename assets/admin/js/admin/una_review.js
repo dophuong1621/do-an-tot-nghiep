@@ -1,7 +1,7 @@
 $(document).ready(function () { 
     $('.duyet').click(function(){
         var duyet = $(this).attr('data-id');
-        console.log(duyet);
+        // console.log(duyet);
         $.ajax({
             type: "POST",
             url: "/Admin/Handles/Evaluate/unapproved",

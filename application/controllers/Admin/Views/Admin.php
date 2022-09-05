@@ -368,11 +368,12 @@ class Admin extends CI_Controller
 			'/assets/admin/vendor/datatables/jquery.dataTables.min.js',
 			'/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js',
 			'/assets/admin/js/demo/datatables-demo.js',
-			'/assets/admin/js/admin/add_bill.js'
+			'/assets/admin/js/admin/add_bill.js',
 		];
 		$this->data['content'] = '/admin/add_bill.php';
 		$id = $this->input->get('id');
 		$this->data['details'] = $this->Evaluates->details($id);
+		$this->data['product'] = $this->Products->select_for();
 		$this->load->view('admin/index', $this->data);
 	}
 }
