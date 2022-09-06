@@ -86,7 +86,7 @@ $(document).ready(function () {
             formBills.append('voucher', $('.idVoucher').val());
             formBills.append('trans_fee', parseInt($('.h_trans_fee').html().replace(',', '')));
             formBills.append('voucher_fee', parseInt($('.h_voucher_fee').html().replace(',', '')));
-            formBills.append('total_fee', parseInt($('.h_total_fee').html().replace(',', '')));
+            formBills.append('total_fee', parseInt($('.h_total_fee').html().split(",").join("")));
             formBills.append('id_cart', JSON.stringify(addIdCart));
 
             $.ajax({

@@ -91,7 +91,7 @@
                     <div class="mb_20">
                         <p class="font_15">Phương thức thanh toán <span class="color_d">***</span></p>
                         <select class="select_payment" id="select_payment" disabled>
-                            <option value="1" selected>Thanh toán khi nhận hàng (COD)</option>
+                            <option value="1" selected>Thanh toán bằng thẻ tín dụng</option>
                         </select>
                     </div>
                     <div class="mb_20">

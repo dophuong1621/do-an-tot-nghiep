@@ -28,7 +28,7 @@
         <div class="d-flex mb-3">
             <label for="exampleInputEmail1" class="d-flex col-xl-3">Tên Voucher</label>
             <div class="w-100 text-right">
-                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['vou_coupon'] ?>">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $name_vouc['vou_coupon'] ?>">
             </div>
         </div>
         <?php
@@ -42,9 +42,27 @@
             }
         ?>
         <div class="d-flex mb-3">
+            <label for="exampleInputEmail1" class="d-flex col-xl-3">Địa chỉ</label>
+            <div class="w-100 text-right">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['address'] ?>">
+            </div>
+        </div>
+        <div class="d-flex mb-3">
+            <label for="exampleInputEmail1" class="d-flex col-xl-3">Quận</label>
+            <div class="w-100 text-right">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= $details[0]['dis_name'] ?>">
+            </div>
+        </div>
+        <div class="d-flex mb-3">
+            <label for="exampleInputEmail1" class="d-flex col-xl-3">Thành Phố</label>
+            <div class="w-100 text-right">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?=  $details[0]['cit_name'] ?>">
+            </div>
+        </div>
+        <div class="d-flex mb-3">
             <label for="exampleInputEmail1" class="d-flex col-xl-3">Tổng tiền</label>
             <div class="w-100 text-right">
-                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= number_format($details[0]['total_price'],'0',',','.')?>">
+                <input type="text" class="form-control col-xl-12 mb-1" disabled value="<?= number_format($details[0]['total_price'],'0',',','.') ?>">
             </div>
         </div>
         

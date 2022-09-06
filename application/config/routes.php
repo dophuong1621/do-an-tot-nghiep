@@ -67,7 +67,6 @@ $route['gio-hang.html'] = 'ManagerController/cart';
 $route['gio-hang.html?payment=(:num)'] = 'ManagerController/cart'; 
 $route['thong-tin-thanh-toan.html'] = 'ManagerController/billInfor'; 
 $route['lich-su-don-hang.html'] = 'ManagerController/orderHistory'; 
-// $route['lich-su-don-hang?id=(:num)'] = 'ManagerController/orderHistory/$1'; 
 $route['chi-tiet-don-hang'] = 'ManagerController/history_details'; 
 $route['chi-tiet-don-hang?id=(:num)'] = 'ManagerController/history_details/$1'; 
 $route['trang-ca-nhan-tk(:any).html'] = 'ManagerController/personalPage/$1'; 
@@ -108,6 +107,8 @@ $route['admin/canceled_invoice'] = 'Admin/Views/Admin/canceled_invoice';
 $route['admin/canceled_invoice?id=(:num)'] = 'Admin/Views/Admin/canceled_invoice/$1';
 $route['admin/approved_details'] = 'Admin/Views/Admin/approved_details';
 $route['admin/approved_details?id=(:num)'] = 'Admin/Views/Admin/approved_details/$1';
+$route['admin/canceled_details'] = 'Admin/Views/Admin/canceled_details';
+$route['admin/canceled_details?id=(:num)'] = 'Admin/Views/Admin/canceled_details/$1';
 
 
 

@@ -49,7 +49,7 @@
                 <label for="exampleInputEmail1" class="d-flex col-xl-3">Số lượng<span class="text-danger ml-1">*</span></label>
                 <div class="w-100 text-right">
                     <input type="number" class="form-control col-xl-12 mb-1 value_amount" placeholder="Số lượng" name="amount" id="value_amount">
-                    <i class="text-danger amount_error"></i>
+                    <i class="text-danger value_amount_error"></i>
                 </div>
             </div>
             <div class="d-flex mb-3">
@@ -70,7 +70,7 @@
             <div class="d-flex mb-3">
                 <label for="exampleInputEmail1" class="d-flex col-xl-3">Ghi chú</label>
                 <div class="w-100 text-right">
-                    <input type="number" class="form-control col-xl-12 mb-1" placeholder="Ghi chú" name="note" id="note">
+                    <input type="text" class="form-control col-xl-12 mb-1" placeholder="Ghi chú" name="note" id="note">
                     <i class="text-danger note_error"></i>
                 </div>
             </div>

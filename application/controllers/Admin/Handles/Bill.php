@@ -13,6 +13,7 @@ class Bill extends CI_Controller
         $this->load->model("Bills");
         $this->load->model("Vouchers");
         $this->load->model("Products");
+        $this->load->model("Pay_models");
         $this->load->helper('fun_helper');
     }
     public function unapproved()
@@ -59,32 +60,53 @@ class Bill extends CI_Controller
     {
         $name = $this->input->post('name');
         $phone = $this->input->post('phone');
-        $product_name = $this->input->post('product_name');
+        $product_id = $this->input->post('product_id');
+        // $product_name = $this->input->post('product_name');
+        $price_pro = $this->input->post('price_pro');
         $amount = $this->input->post('amount');
         $card_name = $this->input->post('card_name');
         $voucher = $this->input->post('voucher');
+        $total_voucher = $this->input->post('total_voucher');
+        $total_price = $this->input->post('total_price');
         $note = $this->input->post('note');
         $result = false;
         $message = "Thêm hoá đơn không thành công";
-        if ($name != "" && $product_name != "" && $phone != "" && $amount != "" && $card_name != "") {
+        if ($name != "" && $product_id != "" && $phone != "" && $amount != "" && $card_name != "") {
             $data = [
                 'bill_name' => $name,
                 'phone' => $phone,
-                'product_name ' => $product_name,
-                'amount' => $amount,
                 'voucher' => $voucher,
+                'total_voucher' => $total_voucher,
                 'total_trans' => 0,
                 'card_name' => $card_name,
                 'note' => $note,
+                'total_price' => $total_price,
                 'created_at' => time(),
             ];
-            if($voucher != ''){
+            if ($voucher != '') {
+                $vou = $this->Vouchers->selectVou($voucher);
+                $id_vou = $vou['id'];
+                $remain = $vou['remaining_tickets'] - 1;
                 $data = [
-                    'ticket_number' => $card_name,
-                    'remaining_tickets' => $card_name,
+                    'remaining_tickets' => $remain,
                 ];
+                $this->Vouchers->update($data, $id_vou);
             }
-            // $this->Bills->insert($data);
+            $insert_bill = $this->Bills->insert($data);
+            $data_detail = [
+                'bill_id' => $insert_bill,
+                'product_id' => $product_id,
+                'bill_price' => $price_pro,
+                'amount' => $amount,
+            ];
+            $pro = $this->Products->select($product_id);
+            $remain = $pro['amount'] - $amount;
+            $so_luong = [
+                'amount' => $remain,
+            ];
+            $this->Products->update($so_luong, $product_id);
+
+            $this->Pay_models->addBillDetails($data_detail); 
             $result = true;
             $message = "Thêm hoá đơn thành công";
         }

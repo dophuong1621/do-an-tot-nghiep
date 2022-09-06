@@ -51,7 +51,8 @@
                                         echo 'Đã huỷ';
                                     } ?></td> -->
                                 <td class="d-flex justify-content-center">
-                                    <a href="/admin/add_bill ?>" class="btn btn-primary">Khôi phục</a>
+                                    <!-- <a href="/admin/add_bill" class="btn btn-primary">Khôi phục</a> -->
+                                    <a href="/admin/canceled_details?id=<?= $value['id'] ?>" class="btn btn-primary">Chi tiết</a>
                                 </td>
 
                             </tr>

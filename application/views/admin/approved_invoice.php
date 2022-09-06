@@ -33,7 +33,11 @@
                         <? foreach ($approved_invoice as $value) { ?>
                             <tr>
                                 <td><?= $value['id'] ?></td>
-                                <td><?= $value['user_id'] ?></td>
+                                <td><?php if ($value['user_id'] == 0) {
+                                        echo "x";
+                                    } else {
+                                        echo $value['user_id'];
+                                    } ?></td>
                                 <td><?php if ($value['voucher'] == '') {
                                         echo "x";
                                     } else {

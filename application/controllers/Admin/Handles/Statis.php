@@ -24,14 +24,13 @@ class Statis extends CI_Controller
         if ($date_from < $date_to ) {
             if ($date_from != '' && $date_to != '') {
                 $date =  $this->Statistical->search($date_from, $date_to);
-                $count = count($date);
+                $count =count($date);
                 if($count != 0){
                     $result = true;
                     $message = 'Tìm kiếm thành công';
                 }
             }
         }
-
         if ($result == true) {
             echo json_encode([
                 'result' => $result,

@@ -77,12 +77,12 @@ class BillInforController extends CI_Controller
                     ];
                     $product_id = $result['id'];
                     $pro = $this->Products->select($product_id);
-                    $remain = $pro['amount'] - 1;
+                    $remain = $pro['amount'] - $result['amount'];
                     $so_luong = [
                         'amount' => $remain,
                     ];
                     $this->Products->update($so_luong, $result['id']);
-
+                    // var_dump($cart_id[$key][1]);
                     $this->Pay_models->addBillDetails($data_detail); 
                 }
             }

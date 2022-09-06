@@ -22,6 +22,7 @@
                             <th>Tên người đánh giá</th>
                             <th>Sao đánh giá</th>
                             <th>Nội dung</th>
+                            <th>Ngày đánh giá</th>
                             <th>Chức năng</th>
                         </tr>
                     </thead>
@@ -36,6 +37,7 @@
                                 <td><?= $value['name_eva'] ?></td>
                                 <td><?= $value['star'] ?></td>
                                 <td><?= $value['content'] ?></td>
+                                <td><?= ($value['created_at'] == 0) ? "x" : date('H:i:s d/m/Y', $value["created_at"]) ?></td>
                                 <td class="d-flex justify-content-center">
                                     <!-- <button type="button" data-id="<?= $value['id'] ?>" class="btn btn-primary duyet">
                                         Duyệt

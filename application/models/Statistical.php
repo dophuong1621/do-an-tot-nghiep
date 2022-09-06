@@ -26,6 +26,15 @@ class Statistical extends CI_Model
         $this->db->where("created_at BETWEEN '$date_from' AND ' $date_to'");
         $this->db->where("status", 1);
         $query  =   $this->db->get('bills');
-        return $query->result();
+        return $query->result_array();
     }
+    public function count($id)
+	{
+		$this->db->select('COUNT(id) as count');
+		$this->db->where([
+			'id' => $id,
+			'status' => 1,
+		]);
+		return $this->db->get('bills')->row_array();
+	}
 }

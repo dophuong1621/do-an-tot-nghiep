@@ -103,7 +103,6 @@ $(document).ready(function () {
                 dataType: "json",
                 success: function (response) {
                     check = response.result;
-                    console.log(check);
                     alert(response.message);
                     if (check == true) {
                         window.location.href = '/admin/voucher';

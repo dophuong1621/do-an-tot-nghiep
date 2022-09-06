@@ -186,6 +186,7 @@ class Admin extends CI_Controller
 		$this->data['content'] = '/admin/unapproved_details.php';
 		$id = $this->input->get('id');
 		$this->data['details'] = $this->Bills->details($id);
+		$this->data['detailUser'] = $this->Bills->detailUser($id);
 		$this->load->view('admin/index', $this->data);
 	}
 	public function approved_invoice()
@@ -217,6 +218,7 @@ class Admin extends CI_Controller
 		$this->data['content'] = '/admin/approved_details.php';
 		$id = $this->input->get('id');
 		$this->data['details'] = $this->Bills->details($id);
+		$this->data['detailUser'] = $this->Bills->detailUser($id);
 		$this->load->view('admin/index', $this->data);
 	}
 	public function canceled_invoice()
@@ -247,7 +249,8 @@ class Admin extends CI_Controller
 		];
 		$this->data['content'] = '/admin/canceled_details.php';
 		$id = $this->input->get('id');
-		// $this->data['details'] = $this->Bills->details($id);
+		$this->data['details'] = $this->Bills->details($id);
+		$this->data['detailUser'] = $this->Bills->detailUser($id);
 		$this->load->view('admin/index', $this->data);
 	}
 	public function inventory()

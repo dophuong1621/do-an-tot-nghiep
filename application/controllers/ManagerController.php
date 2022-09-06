@@ -12,6 +12,7 @@ class ManagerController extends CI_Controller
 		$this->load->library('user_agent');
 		$this->load->helper('fun_helper');
 		$this->load->model("Users");
+		$this->load->model("Vouchers");
 		$this->load->model("Products");
 		$this->load->model("User_details");
 		$this->load->model("Contact");
@@ -103,13 +104,14 @@ class ManagerController extends CI_Controller
 		$this->load->view('manager_view', $this->data);
 	}
 	public function history_details(){
-		// var_dump(1);
 		$id = $this->input->get('id');
 		$history = $this->Bill_details->historyDetails($id); 
+		$name_vouc = $this->Vouchers->select($history[0]['voucher']); 
 		$this->data['title'] = 'Chi tiết đơn hàng';
 		$this->data['css'] = ['cont_order.css?v=' . version()];
 		$this->data['js'] = ['jquery.validate.min.js', 'cont_order.js?v=' . version()];
 		$this->data['details'] = $history;
+		$this->data['name_vouc'] = $name_vouc;
 		$session = $this->session->userdata('user');
 		$this->data['id'] = $id;
 		$this->data['content'] = '/order_history_details.php';
